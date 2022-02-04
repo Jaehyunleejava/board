@@ -24,8 +24,7 @@ public class BoardController {
 	@GetMapping("/api/getAll")
 	public ApiResult<List<BoardVO>> getAll() {
 		List<BoardVO> result = boardService.getAll();
-		
-		return ApiUtils.success("0000", result);
+		return ApiUtils.success(ResponseCode.SUCCESS.getCode(), result);
 	}
 	
 	@ApiOperation(value = "게시글 조회", notes = "특정 게시글을 조회한다")
@@ -33,7 +32,7 @@ public class BoardController {
 	public ApiResult<BoardVO> get(@PathVariable int boardNo) throws Exception {
 		BoardVO result = boardService.get(boardNo);
 
-		return ApiUtils.success("0000", result);
+		return ApiUtils.success(ResponseCode.SUCCESS.getCode(), result);
 	}
 	
 	@ApiOperation(value = "게시글 입력", notes = "게시글 입력 후 입력한 정보데이터를 조회한다")
@@ -41,14 +40,14 @@ public class BoardController {
 	public ApiResult<BoardVO> write(@RequestBody BoardVO boardVO) throws Exception {
 		BoardVO result = boardService.write(boardVO);
 		
-		return ApiUtils.success("0000", result);
+		return ApiUtils.success(ResponseCode.SUCCESS.getCode(), result);
 	}
 	
 	@ApiOperation(value = "게시글 삭제", notes = "특정 게시글을 삭제한다")
 	@PostMapping("/api/delete")
 	public ApiResult<String> delete(@RequestBody BoardVO boardVO) throws Exception {
 		boardService.delete(boardVO.getBoardNo());
-		return ApiUtils.success("0000", "");
+		return ApiUtils.success(ResponseCode.SUCCESS.getCode(), "");
 	}
 	
 	@ApiOperation(value = "게시글 수정", notes = "특정 게시글을 수정한다")
@@ -61,6 +60,6 @@ public class BoardController {
 		param.setContents(boardVO.getContents());
 		boardService.update(param);
 
-		return ApiUtils.success("0000", "");
+		return ApiUtils.success(ResponseCode.SUCCESS.getCode(), "");
 	}
 }
