@@ -5,6 +5,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import com.example.demo.model.response.ApiResult;
+import com.example.demo.model.response.ApiUtils;
+import com.example.demo.model.response.ResponseCode;
+
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

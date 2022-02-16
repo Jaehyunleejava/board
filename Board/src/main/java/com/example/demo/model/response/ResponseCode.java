@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model.response;
 
 public enum ResponseCode {
 

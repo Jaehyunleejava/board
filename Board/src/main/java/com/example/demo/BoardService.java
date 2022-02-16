@@ -2,6 +2,8 @@ package com.example.demo;
 
 import java.util.List;
 
+import com.example.demo.model.BoardVO;
+
 public interface BoardService {
 	
 	//전체 게시글 가져오기

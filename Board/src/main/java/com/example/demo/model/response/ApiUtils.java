@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model.response;
 
 public class ApiUtils {
     public static <T> ApiResult<T> success(String rsCode, T response) {
